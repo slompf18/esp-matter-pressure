@@ -42,43 +42,53 @@ void plugin_init_callback_common();
 
 namespace descriptor {
 cluster_t *create(endpoint_t *endpoint, uint8_t flags);
-} /* descriptor */
+} // namespace descriptor
 
 namespace actions {
 cluster_t *create(endpoint_t *endpoint, uint8_t flags);
-} /* actions */
+} // namespace actions
 
 namespace access_control {
 cluster_t *create(endpoint_t *endpoint, uint8_t flags);
-} /* access_control */
+} // namespace access_control
 
 namespace basic_information {
 typedef struct config {
     uint16_t cluster_revision;
     char node_label[32];
-    config() : cluster_revision(1), node_label{0} {}
+    config()
+        : cluster_revision(1)
+        , node_label{0}
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* basic_information */
+} // namespace basic_information
 
 namespace binding {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* binding */
+} // namespace binding
 
 namespace ota_provider {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* ota_provider */
+} // namespace ota_provider
 
 namespace ota_requestor {
 typedef struct config {
@@ -86,137 +96,187 @@ typedef struct config {
     bool update_possible;
     uint8_t update_state;
     nullable<uint8_t> update_state_progress;
-    config() : cluster_revision(1), update_possible(1), update_state(0), update_state_progress(0) {}
+    config()
+        : cluster_revision(1)
+        , update_possible(1)
+        , update_state(0)
+        , update_state_progress(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* ota_requestor */
+} // namespace ota_requestor
 
 namespace general_commissioning {
 typedef struct config {
     uint16_t cluster_revision;
     uint64_t breadcrumb;
-    config() : cluster_revision(1), breadcrumb(0) {}
+    config()
+        : cluster_revision(1)
+        , breadcrumb(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* general_commissioning */
+} // namespace general_commissioning
 
 namespace network_commissioning {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* network_commissioning */
+} // namespace network_commissioning
 
 namespace general_diagnostics {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* general_diagnostics */
+} // namespace general_diagnostics
 
 namespace administrator_commissioning {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* administrator_commissioning */
+} // namespace administrator_commissioning
 
 namespace operational_credentials {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* operational_credentials */
+} // namespace operational_credentials
 
 namespace group_key_management {
 cluster_t *create(endpoint_t *endpoint, uint8_t flags);
-} /* group_key_management */
+} // namespace group_key_management
 
 namespace diagnostics_network_wifi {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* diagnostics_network_wifi */
+} // namespace diagnostics_network_wifi
 
 namespace diagnostics_network_thread {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* diagnostics_network_thread */
+} // namespace diagnostics_network_thread
 
 namespace time_synchronization {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* time_synchronization */
+} // namespace time_synchronization
 
 namespace bridged_device_basic {
 typedef struct config {
     uint16_t cluster_revision;
     bool reachable;
-    config() : cluster_revision(1), reachable(true) {}
+    config()
+        : cluster_revision(1)
+        , reachable(true)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* bridged_device_basic */
+} // namespace bridged_device_basic
 
 namespace user_label {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* user_label */
+} // namespace user_label
 
 namespace fixed_label {
 typedef struct config {
     uint16_t cluster_revision;
-    config() : cluster_revision(1) {}
+    config()
+        : cluster_revision(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* fixed_label */
+} // namespace fixed_label
 
 namespace identify {
 typedef struct config {
     uint16_t cluster_revision;
     uint16_t identify_time;
     uint8_t identify_type;
-    config() : cluster_revision(4), identify_time(0), identify_type(0) {}
+    config()
+        : cluster_revision(4)
+        , identify_time(0)
+        , identify_type(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* identify */
+} // namespace identify
 
 namespace groups {
 typedef struct config {
     uint16_t cluster_revision;
     uint8_t group_name_support;
-    config() : cluster_revision(4), group_name_support(0) {}
+    config()
+        : cluster_revision(4)
+        , group_name_support(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* groups */
+} // namespace groups
 
 namespace scenes {
 typedef struct config {
@@ -226,23 +286,34 @@ typedef struct config {
     uint16_t current_group;
     bool scene_valid;
     uint8_t scene_name_support;
-    config() : cluster_revision(4), scene_count(0), current_scene(0), current_group(0), scene_valid(false),
-               scene_name_support(0) {}
+    config()
+        : cluster_revision(4)
+        , scene_count(0)
+        , current_scene(0)
+        , current_group(0)
+        , scene_valid(false)
+        , scene_name_support(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* scenes */
+} // namespace scenes
 
 namespace on_off {
 typedef struct config {
     uint16_t cluster_revision;
     bool on_off;
     feature::lighting::config_t lighting;
-    config() : cluster_revision(4), on_off(false) {}
+    config()
+        : cluster_revision(4)
+        , on_off(false)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags, uint32_t features);
-} /* on_off */
+} // namespace on_off
 
 namespace level_control {
 typedef struct config {
@@ -251,11 +322,17 @@ typedef struct config {
     nullable<uint8_t> on_level;
     uint8_t options;
     feature::lighting::config_t lighting;
-    config() : cluster_revision(5), current_level(0xFE), on_level(0xFE), options(0) {}
+    config()
+        : cluster_revision(5)
+        , current_level(0xFE)
+        , on_level(0xFE)
+        , options(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags, uint32_t features);
-} /* level_control */
+} // namespace level_control
 
 namespace color_control {
 typedef struct config {
@@ -270,12 +347,19 @@ typedef struct config {
     feature::xy::config_t xy;
     feature::enhanced_hue::config_t enhanced_hue;
     feature::color_loop::config_t color_loop;
-    config() : cluster_revision(5), color_mode(1), color_control_options(0), enhanced_color_mode(1),
-               color_capabilities(0), number_of_primaries(0) {}
+    config()
+        : cluster_revision(5)
+        , color_mode(1)
+        , color_control_options(0)
+        , enhanced_color_mode(1)
+        , color_capabilities(0)
+        , number_of_primaries(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags, uint32_t features);
-} /* color_control */
+} // namespace color_control
 
 namespace fan_control {
 typedef struct config {
@@ -284,11 +368,18 @@ typedef struct config {
     uint8_t fan_mode_sequence;
     nullable<uint8_t> percent_setting;
     uint8_t percent_current;
-    config() : cluster_revision(2), fan_mode(0), fan_mode_sequence(2), percent_setting(0), percent_current(0) {}
+    config()
+        : cluster_revision(2)
+        , fan_mode(0)
+        , fan_mode_sequence(2)
+        , percent_setting(0)
+        , percent_current(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* fan_control */
+} // namespace fan_control
 
 namespace thermostat {
 typedef struct config {
@@ -296,11 +387,17 @@ typedef struct config {
     nullable<int16_t> local_temperature;
     uint8_t control_sequence_of_operation;
     uint8_t system_mode;
-    config() : cluster_revision(5), local_temperature(), control_sequence_of_operation(4), system_mode(1) {}
+    config()
+        : cluster_revision(5)
+        , local_temperature()
+        , control_sequence_of_operation(4)
+        , system_mode(1)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* thermostat */
+} // namespace thermostat
 
 namespace door_lock {
 typedef struct config {
@@ -310,11 +407,19 @@ typedef struct config {
     bool actuator_enabled;
     uint8_t operating_mode;
     uint16_t supported_operating_modes;
-    config() : cluster_revision(6), lock_state(0), lock_type(0), actuator_enabled(0), operating_mode(0), supported_operating_modes(0xFFF6) {}
+    config()
+        : cluster_revision(6)
+        , lock_state(0)
+        , lock_type(0)
+        , actuator_enabled(0)
+        , operating_mode(0)
+        , supported_operating_modes(0xFFF6)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* door_lock */
+} // namespace door_lock
 
 namespace window_covering {
 typedef struct config {
@@ -341,22 +446,34 @@ typedef struct config {
     uint16_t installed_closed_limit_tilt;
     uint16_t mode;
     uint16_t safety_status;
-    config() : cluster_revision(5), type(0), operational_status(0), end_product_type(0), mode(0) {}
+    config()
+        : cluster_revision(5)
+        , type(0)
+        , operational_status(0)
+        , end_product_type(0)
+        , mode(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* window_covering */
+} // namespace window_covering
 
 namespace switch_cluster {
 typedef struct config {
     uint16_t cluster_revision;
     uint8_t number_of_positions;
     uint8_t current_position;
-    config() : cluster_revision(1), number_of_positions(2), current_position(0) {}
+    config()
+        : cluster_revision(1)
+        , number_of_positions(2)
+        , current_position(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* switch_cluster */
+} // namespace switch_cluster
 
 namespace temperature_measurement {
 typedef struct config {
@@ -364,11 +481,17 @@ typedef struct config {
     nullable<int16_t> measured_value;
     nullable<int16_t> min_measured_value;
     nullable<int16_t> max_measured_value;
-    config() : cluster_revision(4), measured_value(), min_measured_value(), max_measured_value() {}
+    config()
+        : cluster_revision(4)
+        , measured_value()
+        , min_measured_value()
+        , max_measured_value()
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* temperature_measurement */
+} // namespace temperature_measurement
 
 namespace occupancy_sensing {
 typedef struct config {
@@ -376,22 +499,55 @@ typedef struct config {
     uint8_t occupancy;
     uint8_t occupancy_sensor_type;
     uint8_t occupancy_sensor_type_bitmap;
-    config() : cluster_revision(3), occupancy(0), occupancy_sensor_type(0),
-               occupancy_sensor_type_bitmap(0) {}
+    config()
+        : cluster_revision(3)
+        , occupancy(0)
+        , occupancy_sensor_type(0)
+        , occupancy_sensor_type_bitmap(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* occupancy_sensing */
+} // namespace occupancy_sensing
+
+namespace pressure_measurement {
+typedef struct config {
+    uint16_t cluster_revision;
+    nullable<int16_t> measured_value;
+    nullable<int16_t> min_measured_value;
+    nullable<int16_t> max_measured_value;
+    nullable<int16_t> scaled_value;
+    nullable<int16_t> min_scaled_value;
+    nullable<int16_t> max_scaled_value;
+    config()
+        : cluster_revision(3)
+        , measured_value()
+        , min_measured_value()
+        , max_measured_value()
+        , scaled_value()
+        , min_scaled_value()
+        , max_scaled_value()
+    {
+    }
+} config_t;
+
+cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
+} // namespace pressure_measurement
 
 namespace boolean_state {
 typedef struct config {
     uint16_t cluster_revision;
     bool state_value;
-    config() : cluster_revision(1), state_value(0) {}
+    config()
+        : cluster_revision(1)
+        , state_value(0)
+    {
+    }
 } config_t;
 
 cluster_t *create(endpoint_t *endpoint, config_t *config, uint8_t flags);
-} /* boolean_state */
+} // namespace boolean_state
 
-} /* cluster */
-} /* esp_matter */
+} // namespace cluster
+} // namespace esp_matter

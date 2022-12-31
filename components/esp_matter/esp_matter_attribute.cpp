@@ -1686,6 +1686,30 @@ attribute_t *create_occupancy_sensor_type_bitmap(cluster_t *cluster, uint8_t val
 } /* attribute */
 } /* occupancy_sensing */
 
+namespace pressure_measurement {
+namespace attribute {
+
+attribute_t *create_pressure_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, PressureMeasurement::Attributes::MeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+attribute_t *create_pressure_min_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, PressureMeasurement::Attributes::MinMeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+attribute_t *create_pressure_max_measured_value(cluster_t *cluster, nullable<int16_t> value)
+{
+    return esp_matter::attribute::create(cluster, PressureMeasurement::Attributes::MaxMeasuredValue::Id,
+                                         ATTRIBUTE_FLAG_NULLABLE, esp_matter_nullable_int16(value));
+}
+
+} /* attribute */
+} /* pressure_measurement */
+
 namespace boolean_state {
 namespace attribute {
 

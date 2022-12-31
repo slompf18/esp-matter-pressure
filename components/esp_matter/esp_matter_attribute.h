@@ -412,6 +412,14 @@ attribute_t *create_occupancy_sensor_type_bitmap(cluster_t *cluster, uint8_t val
 } /* attribute */
 } /* occupancy_sensing */
 
+namespace pressure_measurement {
+namespace attribute {
+attribute_t *create_pressure_measured_value(cluster_t *cluster, nullable<int16_t> value);
+attribute_t *create_pressure_min_measured_value(cluster_t *cluster, nullable<int16_t> value);
+attribute_t *create_pressure_max_measured_value(cluster_t *cluster, nullable<int16_t> value);
+} /* attribute */
+} /* pressure_measurement */
+
 namespace boolean_state {
 namespace attribute {
 attribute_t *state_value(cluster_t *cluster, bool value);
